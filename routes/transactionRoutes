@@ -1,0 +1,22 @@
+const express = require("express");
+const router = express.Router();
+
+const {
+  createTransaction,
+  getTransactions,
+  employeeSalesReport,
+  getMostProfitableServices,
+  getProfitByPeriod,
+  getProfitPercentagePerEmployee
+
+
+} = require("../controllers/transactionController");
+
+router.post("/", createTransaction);
+router.get("/", getTransactions);
+router.get("/reports/employee-sales", employeeSalesReport);
+router.get("/reports/services/profit",getMostProfitableServices);
+router.get("/reports/profit", getProfitByPeriod);
+router.get("/reports/employees/profit-percentage",getProfitPercentagePerEmployee);
+
+module.exports = router;
